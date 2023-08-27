@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       id: li.getAttribute("data-id"),
       name: li.textContent
     }));
-    sessionStorage.setItem("cart-list", JSON.stringify(cartItems));
+    sessionStorage.setItem("cart", JSON.stringify(cartItems));
   }
 });
 
