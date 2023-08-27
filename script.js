@@ -3,14 +3,14 @@
 // Product data
 document.addEventListener("DOMContentLoaded", () => {
   const productList = document.getElementById("product-list");
-  const cart = document.getElementById("cart");
+  const cart= document.getElementById("cart-list");
 
   // Initialize cart from session storage
   const cartItems = JSON.parse(sessionStorage.getItem("cart")) || [];
   cartItems.forEach(item => addToCart(item));
 
   // Add event listeners to product buttons
-  const addToCartButtons = document.querySelectorAll(".add-to-cart");
+  const addToCartButtons = document.getElementById("clear-cart-btn");
   addToCartButtons.forEach(button => {
     button.addEventListener("click", addToCartHandler);
   });
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       id: li.getAttribute("data-id"),
       name: li.textContent
     }));
-    sessionStorage.setItem("cart", JSON.stringify(cartItems));
+    sessionStorage.setItem("cart-list", JSON.stringify(cartItems));
   }
 });
 
